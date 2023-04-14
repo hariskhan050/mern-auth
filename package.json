@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build":"vite build --prefix frontend",
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "client": "yarn dev --prefix frontend",
