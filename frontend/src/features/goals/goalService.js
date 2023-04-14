@@ -9,7 +9,7 @@ const createGoal = async (goalData, token) => {
     },
   }
 
-  const response = await axios.post(`${url}/api/goals/`, goalData, config)
+  const response = await axios.post(`${url}/api/goals`, goalData, config)
 
   return response.data
 }
@@ -22,7 +22,7 @@ const getGoals = async (token) => {
     },
   }
 
-  const response = await axios.get(`${url}/api/goals/`, config)
+  const response = await axios.get(`${url}/api/goals`, config)
 
   return response.data
 }

@@ -11,16 +11,17 @@ function GoalItem({ goal }) {
         alignItems={"center"}
         direction={"row"}
         justifyContent={"space-between"}
-        width={{ xs: '90%', md: '50%' }}
+        width={{xs:'315px', lg:'96%'} }
+        margin={'auto'}
         sx={{padding:'1em', my:'1em', borderRadius:'1em',bgcolor:'lightblue', textTransform:"capitalize", border:'2px solid skyblue'}}
         
       >
         {/* <Stack direction="row" alignItems={"center"}> */}
-          <Typography variant="h6" sx={{ fontWeight: 700 }}>
+          <Typography variant="h6" sx={{ fontWeight: 500, fontSize:{xs:'.9em', md:'unset'} }}>
             {goal.text}
           </Typography>
         <Button
-          sx={{bgcolor:'red', color:'white', borderRadius:"10px" }}
+          sx={{bgcolor:'red',px:'0', color:'white',width:'fit-content', borderRadius:"10px" }}
             onClick={() => dispatch(deleteGoal(goal._id))}
             className="close"
           >

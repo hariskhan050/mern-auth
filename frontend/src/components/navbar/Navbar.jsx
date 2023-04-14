@@ -2,21 +2,23 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { reset, logout } from "../../features/auth/authSlice";
-import { Login as LoginIcon, Person, Logout as LogoutIcon } from "@mui/icons-material";
+import {
+  Login as LoginIcon,
+  Person,
+  Logout as LogoutIcon,
+} from "@mui/icons-material";
 import { Stack, Box, Typography, Button } from "@mui/material";
 
 const Navbar = () => {
-  const navigate= useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
 
-
   const handleLogout = () => {
-    dispatch(logout())
-    dispatch(reset())
-    navigate('/')
-    
-  }
+    dispatch(logout());
+    dispatch(reset());
+    navigate("/");
+  };
   return (
     <>
       <Stack
@@ -28,13 +30,17 @@ const Navbar = () => {
         <Link to="/">
           <Box>
             <Typography sx={{ fontWeight: 700 }} variant="h6">
-              Achieve by Setting Goals
+              Goals
               <EmojiEventsIcon />
             </Typography>
           </Box>
         </Link>
         {user ? (
-          <Button onClick={handleLogout} endIcon={<LogoutIcon />} variant="contained">
+          <Button
+            onClick={handleLogout}
+            endIcon={<LogoutIcon />}
+            variant="contained"
+          >
             Logout
           </Button>
         ) : (
@@ -42,7 +48,7 @@ const Navbar = () => {
             <Link to="/register">
               <Button
                 startIcon={<Person />}
-                sx={{ mr: "1em" }}
+                sx={{ mr: ".3em" }}
                 variant="outlined"
               >
                 Signup

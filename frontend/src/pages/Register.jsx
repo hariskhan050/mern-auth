@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useState, useEffect } from "react";
-import { Box, Typography, Stack, Input, Button } from "@mui/material";
+import { Box, Typography, Stack, Input, Button, CircularProgress } from "@mui/material";
 import { StyledInput } from "./Login";
 import { register, reset } from "../features/auth/authSlice";
 
@@ -61,14 +61,17 @@ const Register = () => {
   };
 
   if (isLoading) {
-    return <h1>Loading...</h1>
+    return <CircularProgress sx={{color:'blue',position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',}} />
   }
   return (
     <Box margin={"2em 0"} align={"center"}>
       <Typography variant="h3">Register</Typography>
       <Typography variant="h5">Please create an account </Typography>
       <form onSubmit={handleSubmit}>
-        <Stack width={"400px"}>
+        <Stack mx='.3em' maxWidth={"400px"}>
           <StyledInput
             onChange={handleChange}
             value={name}

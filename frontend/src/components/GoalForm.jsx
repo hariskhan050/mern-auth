@@ -19,10 +19,7 @@ function GoalForm() {
   return (
     <Box>
       <form onSubmit={onSubmit}>
-        <Stack
-          justifyContent={"center"}
-          direction={"row"}
-          alignItems={"center"}
+        <Box
         >
           <StyledInput
             placeholder="Please enter your goal..."
@@ -32,10 +29,10 @@ function GoalForm() {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
+        </Box>
           <Button type="submit" variant="contained" sx={{ py: ".7em", mx: "1em" }}>
             Set Goal
           </Button>
-        </Stack>
       </form>
     </Box>
   );

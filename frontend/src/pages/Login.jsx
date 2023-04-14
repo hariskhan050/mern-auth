@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, Typography, Stack, Input, Button } from "@mui/material";
+import { Box, Typography, Stack, Input, Button, CircularProgress } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -47,7 +47,10 @@ const Login = () => {
   
   
    if (isLoading) {
-    return <h1>Loading...</h1>
+    return <CircularProgress sx={{color:'blue',position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',}} />
   }
 
 
@@ -76,7 +79,7 @@ const Login = () => {
       <Typography variant="h3">Login</Typography>
       <Typography variant="h5">Please login to set goals</Typography>
       <form onSubmit={handleSubmit}>
-        <Stack width={"400px"}>
+        <Stack mx='.3em' maxWidth={"400px"}>
           <StyledInput
             onChange={handleChange}
             value={email}
